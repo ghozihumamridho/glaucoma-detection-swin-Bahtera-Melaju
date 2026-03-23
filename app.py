@@ -80,17 +80,15 @@ st.markdown("""
         padding: 4rem 1rem;
         border-radius: 20px;
         border: 2px dashed #4CAF50;
-        background-color: #f9f9f9;
     }
     [data-testid="stFileUploaderDropzone"]:hover {
         border-color: #2e7d32;
-        background-color: #f0fdf4;
+        background-color: rgba(76, 175, 80, 0.1); 
     }
     .stMetric {
-        background-color: #ffffff;
         padding: 10px;
         border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border: 1px solid rgba(128, 128, 128, 0.2);
     }
     </style>
     """, unsafe_allow_html=True)
@@ -120,8 +118,15 @@ if uploaded_file:
                 with torch.no_grad():
                     output = model(input_tensor)
                     prob = torch.sigmoid(output).item()
-                    prediction = "GLAUCOMA (GON+)" if prob > 0.5 else "NORMAL (GON-)"
-                    color = "red" if prob > 0.5 else "green"
+
+                    if prob > 0.5:
+                        prediction = "GLAUCOMA (GON+)"
+                        confidence = prob
+                        color = "red"
+                    else:
+                        prediction = "NORMAL (GON-)"
+                        confidence = 1 - prob
+                        color = "green"
 
                 target_layers = [model.layers[-1].blocks[-1].norm2]
                 cam = GradCAMPlusPlus(model=model, target_layers=target_layers, reshape_transform=reshape_transform)
@@ -145,7 +150,7 @@ if uploaded_file:
 
             st.markdown(f"### Prediction Result: :{color}[{prediction}]")
             m1, m2 = st.columns(2)
-            m1.metric("Confidence Score", f"{prob*100:.2f}%")
+            m1.metric("Confidence Score", f"{confidence*100:.2f}%")
             m2.metric("Analysis Speed", f"{duration:.2f} seconds")
 
             if prob > 0.5:
