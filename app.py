@@ -93,7 +93,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("AI-Based Early Glaucoma Detection System")
+st.title("Automated Early Glaucoma Identification System (A.E.G.I.S.)")
 st.write("Swin Transformer - Team BahteraMelaju")
 
 uploaded_file = st.file_uploader("Upload or Drag & Drop Eye Fundus Photo Here", type=["jpg", "jpeg", "png"])
