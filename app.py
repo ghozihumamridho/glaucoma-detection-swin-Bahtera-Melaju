@@ -96,7 +96,7 @@ st.markdown("""
 st.title("Automated Early Glaucoma Identification System (A.E.G.I.S.)")
 st.write("Swin Transformer - Team BahteraMelaju")
 
-uploaded_file = st.file_uploader("Upload or Drag & Drop Eye Fundus Photo Here", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload or Drag & Drop Eye Fundus Photo Here", type=["jpg", "jpeg", "png", "wepg"])
 
 if uploaded_file:
     model, device = load_swin_model(MODEL_PATH)
