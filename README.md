@@ -1,4 +1,4 @@
-# AI-Based Early Glaucoma Detection System
+# Automated Early Glaucoma Identification System (A.E.G.I.S.)
 
 An AI-powered application for early detection of glaucoma from fundus eye images using deep learning.
 
