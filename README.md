@@ -91,7 +91,8 @@ streamlit run app.py
 ## Sample Output
 
 **UI**
-<img width="1919" height="965" alt="image" src="https://github.com/user-attachments/assets/5e2cbcc8-5e41-485a-af18-44f218ad8c33" />
+<img width="1919" height="965" alt="image" src="https://github.com/user-attachments/assets/5fa52a69-32b0-480e-8ec7-2e6c6c7f9643" />
+
 
 **Output**
 <img width="1919" height="965" alt="image" src="https://github.com/user-attachments/assets/acbbd2a6-161e-4cf5-8890-d6c4df09ccd0" />
