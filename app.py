@@ -140,13 +140,13 @@ if uploaded_file:
             col1, col2, col3 = st.columns(3)
             with col1:
                 st.subheader("1. Original Image")
-                st.image(cv2.cvtColor(img_original, cv2.COLOR_BGR2RGB), use_column_width=True)
+                st.image(cv2.cvtColor(img_original, cv2.COLOR_BGR2RGB), width="stretch")
             with col2:
                 st.subheader("2. Preprocessing Result")
-                st.image(processed_img, use_column_width=True)
+                st.image(processed_img, width="stretch")
             with col3:
                 st.subheader("3. AI Focus Analysis")
-                st.image(cam_image, use_column_width=True)
+                st.image(cam_image, width="stretch")
 
             st.markdown(f"### Prediction Result: :{color}[{prediction}]")
             m1, m2 = st.columns(2)
