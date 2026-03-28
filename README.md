@@ -64,6 +64,7 @@ This project is currently deployed on Hugging Face Spaces.
 Simply access the app via the provided link.
 ---
 Link 1(HuggingFace): https://ghozihumam-swin-transformer.hf.space/
+---
 Link 2(Streamlit App): https://aegis-bahtera-melaju.streamlit.app/
 ---
 
